@@ -1,0 +1,122 @@
+section[data-layout="cloud_logo"]{
+    .container{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: -60px;
+    }
+    .solo-logo{
+        width: 25%;
+        padding: 0 15px;
+        margin-bottom: 60px;
+    }
+}
+
+.solo-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p,h3{
+        text-align: center;
+    }
+    h3{
+        @include font-size(18);
+        line-height: 1.18;
+        color: $mainblue;
+        margin-bottom: 5px;
+        font-weight: 400;
+    }
+    p{
+        @include font-size(16);
+        line-height: 1.18;
+        margin-bottom: 15px;
+    }
+    .image{
+        height: 120px;
+        width: 100%;
+        position: relative;
+        margin-bottom: 20px;
+        img{
+            max-height: 100%;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            max-width: 100%;
+        }
+    }
+    i{
+        color:$mainblue;
+        @include font-size(14);
+
+    }
+    .partner-description{
+        display: none;
+    }
+    .title-to-show{
+        opacity: 0;
+        // transform: translateY(-100%);
+        @include transition(0.2s ease-in-out);
+    }
+    &:hover{
+        .title-to-show{
+            opacity: 1;
+            // transform: translateY(0);
+        }
+    }
+}
+@media screen and (max-width: 1250px){
+
+}
+@media screen and (max-width: 1024px){
+    .solo-logo{
+        .image{
+            height: 50px;
+        }
+    }
+}
+@media screen and (max-width: 800px){
+    section[data-layout="cloud_logo"]{
+        .solo-logo{
+            width: 33.3333333%;
+        }
+    }
+}
+@media screen and (max-width: 640px){
+    section[data-layout="cloud_logo"]{
+        .solo-logo{
+            width: 50%;
+        }
+    }
+    .solo-logo{
+        .image{
+            margin-bottom: 15px;
+            width: 90% !important;
+        }
+        p{
+            margin-bottom: 10px;
+        }
+        .title-to-show{
+            opacity: 1;
+        }
+        h3{
+            @include font-size(14);
+        }
+    }
+}
+@media screen and (max-width: 350px){
+    section[data-layout="cloud_logo"]{
+        .solo-logo{
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        .container{
+            margin-bottom: -30px;
+        }
+    }
+    .solo-logo{
+        .image{
+            height: 40px;
+        }
+    }
+}

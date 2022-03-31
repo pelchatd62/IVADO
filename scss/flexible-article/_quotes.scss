@@ -1,0 +1,197 @@
+section[data-layout="quotes"]{
+    &:first-child{
+        .container{
+            &.article{
+                margin-top: -150px;
+                padding-top: 150px;
+            }
+        }
+    }
+    .paragraph, .wisi{
+        a:not(.btn):not(.link):not(.wisi-standard-btn){
+            padding-bottom: 4px;
+        }
+        a{
+            display: inline-block;
+            &::before{
+                background-color: white;
+            }
+        }
+        p{
+            @include font-size(36);
+            font-weight: 600;
+            line-height: 1.77;
+        }
+        margin-bottom: 30px;
+    }
+    &:last-child{
+        .container{
+            .container.single-project{
+                margin-bottom: 0;
+            }
+        }
+    }
+    .container{
+        width: 100%;
+        position: relative;
+        color: $white;
+        padding: 100px calc(2 / 12 * 100%);
+        padding-right: calc((100% * 1 / 12) + ( (100% * 10 / 12) / 4 ) );
+        z-index: 1;
+        &::before{
+            position: absolute;
+            content: "";
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: calc((100% * 1 / 12) + ( (100% * 10 / 12) / 8 ) );
+            z-index: -1;
+            background-color: $mainblue;
+        }
+        &.article{
+            margin-bottom: 0;
+        }
+    }
+    .who{
+        display: flex;
+        p{
+            line-height: 1.7;
+            margin: 0;
+            &:first-child{
+                font-weight: 700;
+            }
+            &:last-child{
+                @include font-size(18);
+            }
+        }
+        &::before{
+            content: "";
+            height: 1px;
+            width: 30px;
+            margin-right: 10px;
+            background-color: $white;
+            margin-top:14px
+        }
+    }
+    .quote{
+        width: 38px;
+        height: 27px;
+        background: url("../assets/svg/groupe-179.svg") no-repeat center / contain ;
+        position: absolute;
+        top: 116px;
+        left: calc(1 / 12 * 100%);
+    }
+}
+@media screen and (min-width: 1250px){
+    // section[data-layout="quotes"]{
+    //     .wisi, .who{
+    //         padding: 0 6vw;
+    //     }
+    // }
+}
+
+@media screen and (max-width: 1250px){
+    section[data-layout="quotes"]{
+        &:first-child{
+            .container{
+                &.article{
+                    margin-top: -100px;
+                    padding-top: 100px;
+                    .quote{
+                        top:70px;
+                    }
+                }
+            }
+            
+        }
+        .paragraph, .wisi{
+            p{
+                @include font-size(30);
+            }
+        }
+        .container{
+            padding: 100px calc(32px + 75px +  ( (100% - 64px) / 8 ) ) 100px 75px;
+            background-color: initial;
+            position: relative;
+            &::before{
+                right: calc(32px + ( (100% - 64px) / 8 ) );
+            }
+            &.article{
+                padding: 100px calc(32px + ( (100% - 64px) / 8 ) );
+                &::before{
+                    right: 32px;
+                }
+            }
+        }
+        .quote{
+            left: 32px;
+            top:113px;
+        }
+        // .paragraph{
+        //     p{
+        //         @include font-size(24);
+        //     }
+        // }
+    }
+}
+@media screen and (max-width: 1024px){
+    section[data-layout="quotes"]{
+        .paragraph p, .wisi p , .who{
+            padding-left: 50px;
+        }
+        .container{
+            padding: 50px 32px !important;
+            padding-right: 64px !important;
+            &::before{
+                right: 32px;
+            }
+        }
+        .quote{
+            left: 35px;
+            top: 60px;
+            width: 25px;
+        }
+    }
+}
+@media screen and (max-width: 800px){
+    section[data-layout="quotes"]{
+        &:first-child{
+            .quote{
+                top: 14px;
+            }
+            .container{
+                &.article{
+                    margin-top: -50px;
+                    padding-top: 50px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 640px){
+    section[data-layout="quotes"]{
+        .paragraph p, .wisi p , .who{
+            padding-left: 0px;
+        }
+        .wrapp.article{
+            // padding-right: 16px;
+        }
+        .container{
+            padding: 50px 16px !important;
+            padding-right: 32px !important;
+            &::before, &.article::before{
+                right: 16px;
+            }
+        }
+        .paragraph{
+            p{
+                @include font-size(18);
+                line-height: 1.57;
+            }
+        }
+        .quote{
+            top: 14px;
+            left: 16px;
+        }
+    }
+}

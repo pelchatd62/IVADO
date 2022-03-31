@@ -1,0 +1,268 @@
+.custom-select, .custom-input{
+    padding: 20px 25px;
+    @include font-size(16);
+    font-family: $roboto,'monospace';
+    background-color: $white;
+    &:focus{
+        outline-color: $mainblue;
+    }
+}
+.gform_confirmation_message{
+    font-weight: 700;
+}
+select.custom-select{
+    padding-right: 38px;
+    option{
+       font-family: $roboto,'monospace' !important;
+    }
+}
+input[type="email"], textarea {
+    border-radius: 0;
+}
+.custom-select{
+    -webkit-appearance: none;
+    background: right 25px center no-repeat url('../assets/svg/select_arrow.svg');
+}
+
+// gravity form
+.gform_wrapper{
+    width: 100%;
+}
+.gform_body{
+    > ul{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -30px;
+        margin-bottom: -22px;
+        
+    }
+}
+.gform_footer{
+    .gform_button{
+        background: none;
+        border: none;
+        margin-top: 20px;
+        margin-bottom:50px; //pour voir sur iphone
+    }
+}
+.gfield_required{
+    margin-left: 5px;
+}
+.gfield{
+    padding: 0 30px;
+    margin-bottom: 30px ;
+    position: relative;
+    width: 50%;
+    align-self: flex-end;
+    &.gsection{
+        h2{
+            margin-top: 50px;
+            margin-bottom: 18px;
+        }
+    }
+    &.hundred{
+        width: 100%;
+    }
+    &.gfield_error{
+        margin-bottom: 50px;
+    }
+    &.active{
+        // .gfield_label{
+        //     font-size: 12px;
+        //     font-weight: normal;
+        //     padding: 5px;
+        //     color: $grey ;
+        //     top: 0;
+        // }
+        .gfield_label, .ginput_container_email label{
+            font-size: 16px;
+            font-weight: normal;
+            color: $grey ;
+        }
+        input, textarea{
+            font-weight: 700;
+            color:$grey ;
+            border: 1px solid $grey;
+        }
+        &.textarea{
+            .gfield_label{
+                top:-12px;
+            }
+        }
+        &.normal{
+            &.textarea{
+                .gfield_label{
+                    top:auto;
+                }
+            } 
+            .gfield_label{
+                font-size: 16px;
+                padding: 0;
+                top: auto;
+            }
+        }
+    }
+    &.focus{
+        .gfield_label, input, textarea, .ginput_container_email label{
+            color:$mainblue !important;
+        }
+        input, textarea{
+            border: 1px solid $mainblue !important;
+        }
+    }
+    &.textarea{
+        .gfield_label{
+            transform: initial;
+            top:20px;
+            transform: translateX(20px)
+        }
+    }
+    &.normal {
+        .gfield_label{
+            position: relative;
+            top:auto;
+            transform: translateX(0);
+        }
+        .ginput_container_textarea{
+            margin-top: 10px;
+        }
+    }
+    select{
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url(../assets/svg/arrowform.svg);
+        background-repeat: no-repeat;
+        background-position: right 20px center;
+        background-size: 12.4px 7.6px;
+        outline: none;
+        &:focus{
+            border: 1px solid $mainblue;
+        }
+    }
+    .gfield_checkbox, .gfield_radio{
+        li{
+            &:not(:last-child){
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .ginput_container_checkbox, .gfield_radio, .clear-multi, .ginput_container_select, .ginput_container_multiselect,.ginput_container_email, .ginput_container_text, .ginput_container_textarea, .ginput_container_date{
+        margin-top: 10px;
+    }
+    .gfield_radio{
+        li{
+            display:flex;
+            justify-content: flex-start;
+            align-items: baseline;
+        }
+    }
+    .ginput_container_email{
+        flex-direction: column;
+        display: flex;
+        .ginput_left{
+            margin-bottom: 30px;
+        }
+        input{
+            margin-top: 5px;
+        }
+    }
+    .clear-multi{
+        display: flex;
+    }
+    .ginput_container_time{
+        i{
+            font-style: normal;
+        }
+    }
+    input, textarea, select{
+        width: 100%;
+        border: none;
+        border: 1px solid $greyform;
+        padding: 20px 25px;
+        font-family: $roboto;
+        border-radius: 0 !important;
+        outline: none;
+        @include font-size(16);
+        line-height: 1.31;
+        color:#808080;
+        @include transition(0.3s ease-in-out);
+    }
+    input::placeholder, textarea::placeholder{
+        font-size: 14px;
+    }
+    input[type="checkbox"], input[type="radio"], input[type="number"]{
+        width: auto;
+    }
+    input[type="radio"]{
+        margin-right: 5px;
+    }
+    input[type="number"]{
+        padding: 12px;
+    }
+    .gfield_time_ampm{
+        min-width: 84px;
+        select{
+            padding: 12px;
+        }
+    }
+    .ginput_container_time:not(:last-child){
+        margin-right: 8px;
+    }
+    .gfield_label,.ginput_container_email label{
+        // position: absolute;
+        // top:50%;
+        // transform: translate(20px,-50%);
+        font-family: $roboto;
+        @include font-size(16);
+        line-height: 1.31;
+        color:#808080;
+        // background-color: white;
+        @include transition(0.3s ease-in-out);
+    }
+}
+.ui-datepicker{
+    border: 1px solid #BFBFBF;
+    background-color: white;
+    border-top: 0;
+    display: none;
+    z-index: 999999 !important;
+}
+
+.validation_message{
+    position: absolute;
+    top: calc(100% + 10px);
+}
+.validation_error, .validation_message{
+    color:#D0202E;
+}
+.validation_error{
+    margin-bottom: 15px;
+}
+@media screen and (max-width:1250px){
+    .gform_body{
+        > ul{
+            margin: 0 -10px;
+        }
+    }
+    .gfield{
+        padding: 0 10px;
+    }
+}
+@media screen and (max-width:800px){
+    .gfield{
+            width: 100%;
+    }
+}
+@media screen and (max-width:640px){
+    .gfield{
+            width: 100%;
+            .gfield_label{
+                font-size: 15px;
+            }
+            input, textarea, select {
+                font-size: 15px; 
+                padding: 18px 15px;
+            }
+    }
+}

@@ -1,0 +1,169 @@
+.btn{
+    &.play{
+            width: 74px; 
+            height: 74px;
+            border-radius: 50%;
+            background-color: $white;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            &::before{
+                content: "";
+                position: absolute;
+                top:50%;
+                left:50%;
+                transform: translate(-50% ,-50%);
+                width: 85px; 
+                height: 85px;
+                border: 1px solid $white;
+                border-radius: 50%;
+                @include transition(0.5s ease-in-out);
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                top:50%;
+                left:50%;
+                transform: translate(-50% ,-50%);
+                width: 74px; 
+                height: 74px;
+                opacity: 0;
+                border: 1px solid $white;
+                border-radius: 50%;
+                @include transition(0.5s ease-in-out);
+            }
+            img{
+                position: absolute;
+                top:50%;
+                left:50%;
+                transform: translate(-50% ,-50%);
+            }
+            &:hover{
+                &::before{
+                    width: 108px; 
+                    height: 108px;
+                    opacity: 0;
+                }
+                &::after{
+                    width: 85px; 
+                    height: 85px;
+                    opacity: 1;
+                }
+            }
+    }
+    &.cta-back{
+        border-radius: 50%;
+        border: 1px solid $mainblue;
+        height: 52px;
+        width: 52px;
+        position: relative;
+        margin-right: 20px;
+        @include transition(0.3s ease-in-out);
+        img{
+            @include transition(0.3s ease-in-out);
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    &.ivado{
+        position: relative;
+        display: inline-block;
+        padding: 29px 0px;
+        z-index: 1;
+<<<<<<< HEAD
+        color: $charcoal;
+=======
+        cursor: pointer;
+>>>>>>> c405afc0b6c9ab39689915ff913322990085f18a
+        .label{
+            @include transition(0.3s ease-in-out);
+            padding: 0px 45px;
+            font-family: $roboto;
+            font-size: 16px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        &::after{
+           @include transition(0.3s ease-in-out);
+            transition-delay: .3s;
+            position: absolute;
+            content:'';
+            width: 100%;
+            height: 2px;
+            background-color: $mainblue;
+            bottom: -2px;
+            left: 0px;
+            z-index: -1;
+        }
+
+        .label::after{
+            @include transition(0.3s ease-in-out);
+          
+            content: '';
+            position: absolute;
+            opacity: 0;
+            height: 2px;
+            width: 0px;
+            background-color: white;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 30px;
+        }
+
+        &:hover{
+            &::after{
+                transition-delay: 0s;
+                height:100%;
+            }
+            .label{
+                transition-delay: .3s;
+                color: $white;
+                margin-left:20px;
+                margin-right:-20px;
+            }
+            .label::after {
+                transition-delay: .3s;
+                opacity: 1;
+                width: 20px;
+                
+            }
+        }
+    }
+}
+
+.back-social_media{
+    .link{
+        font-family: 'Roboto Mono';
+        color:$mainblue;
+        @include font-size(18);
+        display: flex;
+        align-items: center;
+        padding-right: 15px;
+        &:hover{
+            .btn.cta-back{
+                background-color: $mainblue;
+            }img{
+                filter: brightness(0) invert(1);
+                transform: translate(calc(-50% - 4px), -50%);
+            }
+        }
+    }    
+}
+@media screen and (max-width:640px){
+    .back-social_media{
+        .btn.cta-back{
+            height: 40px;
+            width: 40px;
+            min-width: 40px;
+            margin-right: 10px;
+            img{
+                width: 15px;
+            }
+        }
+    }
+}

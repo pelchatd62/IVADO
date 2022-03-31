@@ -1,0 +1,460 @@
+.calendar {
+    background-color: $greybackground;
+    padding: 60px;
+    width: calc(100% * 6 / 10 - 60px);
+    margin-right: 60px;
+    max-height: 850px;
+}
+#daily-events {
+    width: 40%;
+}
+.fa-caret-down:before {
+    display: none;
+}
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.calendar .calendar-filters {
+    display: flex;
+}
+
+.calendar .calendar-filters > div {
+    flex: 1 1 0;
+}
+.past-day {
+    color: rgba(35, 35, 35, 0.55) !important;
+    background-color: #e9e9e9;
+
+    .dot:before {
+        background-color: rgba(35, 35, 35, 0.5) !important;
+    }
+}
+.month-year {
+    @include font-size(26);
+    color: $charcoal;
+
+    align-self: center;
+}
+#prev-month,
+#next-month {
+    outline: none;
+    width: 52px;
+    height: 52px;
+    @include transition(0.3s ease-in-out);
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+    &:hover {
+        transform: translateX(-10px);
+    }
+}
+#next-month {
+    &:hover {
+        transform: translateX(10px);
+    }
+}
+.dot:before {
+    z-index: 5;
+    width: 9px;
+    height: 9px;
+    background-color: $green;
+    content: "";
+    display: inline-block;
+    transform: rotate(45deg);
+    margin-right: 7px;
+}
+.dot:last-child:before{
+    margin-right: 0;
+}
+.calendar-container {
+    display: flex;
+}
+.event-search-tools {
+    display: flex;
+    margin-bottom: 35px !important;
+}
+.custom-search-bar.events {
+    margin-right: 60px;
+}
+.dots {
+    z-index: 5;
+    justify-content: center;
+    position: absolute;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.calendar .calendar-filters .filter-label {
+    padding: 5px 10px;
+    text-align: center;
+    font-weight: bold;
+    background: black;
+    color: white;
+}
+
+.calendar .dropdown {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    color: #1caff6;
+    text-align: center;
+    font-size: 14pt;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 160px;
+    left: 0px;
+    z-index: 2000;
+    border: solid 1px #ccc;
+}
+
+.calendar .dropdown .dropdown-item {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.5s opacity;
+    font-size: 10pt;
+    padding: 5px;
+}
+
+.calendar .dropdown .dropdown-item:hover {
+    opacity: 1;
+}
+
+.calendar .years {
+    display: none;
+}
+
+.calendar .title {
+    text-align: center;
+    @include font-size(20);
+}
+
+.calendar .calendar-btn,
+.btn-calendar {
+    float: left;
+    text-align: center;
+    font-size: 14pt;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    width: 20%;
+    cursor: pointer;
+    transition: 0.5s background-color;
+}
+
+.calendar .calendar-btn:hover {
+    background-color: #ddd;
+}
+
+.calendar .year-btn,
+.btn-year {
+    float: right;
+}
+
+.calendar .calendar-dates .days .day {
+    position: relative;
+    float: left;
+    width: calc(100% / 7);
+    padding-top: 21px;
+    padding-bottom: 48px;
+    @include font-size(19);
+    text-align: center;
+    color: $charcoal;
+    border-top: solid 1px rgba(112, 112, 112, 0.5);
+    cursor: pointer;
+}
+.calendar .calendar-dates .day.blank {
+    color: #e9e9e9;
+    background-color: #e9e9e9;
+}
+
+.calendar .calendar-dates .day.blank-white {
+    color: white;
+    background-color: white;
+}
+.blank-white,
+.day.label,
+.day.blank {
+    pointer-events: none;
+}
+
+.calendar .calendar-dates .days {
+    background-color: white;
+    border: none;
+}
+
+.calendar .calendar-dates .days .day.selected {
+    background-color: $mainblue;
+    color: white;
+
+    cursor: pointer;
+
+    .dot:before {
+        color: white;
+    }
+}
+
+.calendar .calendar-dates .days .day.selected:hover {
+    opacity: 1;
+}
+
+// .day.blank, .past-day{
+//     pointer-events: none;
+// }
+.calendar .calendar-dates .days .day.past-day:hover {
+    color: $white;
+}
+.calendar .calendar-dates .days .day.blank:hover {
+    color: #e9e9e9;
+    background-color: #e9e9e9;
+}
+.calendar .calendar-dates .days .day:hover {
+    border-left: 2px solid $mainblue;
+    border-right: 2px solid $mainblue;
+    position: relative;
+
+    &:before {
+        position: absolute;
+        content: "";
+        background-color: $mainblue;
+        height: 2px;
+        width: 100%;
+        left: 0;
+        top: -1px;
+    }
+
+    &:after {
+        position: absolute;
+        content: "";
+        background-color: $mainblue;
+        height: 2px;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+    }
+}
+.selected-date {
+    @include font-size(26);
+    color: $mainblue;
+    text-align: center;
+    padding-bottom: 30px;
+    width: calc(100% - 60px);
+    border-bottom: 1px solid $charcoal;
+}
+
+.small-event-border {
+    position: relative;
+    margin-top: 60px;
+}
+.small-event-border:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: calc(100% - 60px);
+    border-bottom: 1px solid $charcoal;
+}
+.calendar .calendar-dates .days .day.label {
+    color: $white;
+    background-color: $mainblue;
+    height: 75px;
+    border: none;
+    @include font-size(25);
+}
+
+.small-event-container {
+    max-height: 850px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.small-event-container::-webkit-scrollbar {
+    width: 5px;
+}
+.small-event-container::-webkit-scrollbar-track {
+    background: #e5e5e5;
+}
+
+.small-event-container::-webkit-scrollbar-thumb {
+    background: $mainblue;
+}
+
+.small-event-container::-webkit-scrollbar-thumb:hover {
+    background: $mainblue;
+}
+
+.archive-events {
+    #form-event {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    #daily-events {
+        width: 100%;
+    }
+    .calendar {
+        width: 75%;
+    }
+    .archive-events {
+        .calendar-container {
+            display: block;
+        }
+
+        .small-event-border {
+            width: 75%;
+        }
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .calendar {
+        width: 100%;
+    }
+    .archive-events {
+        .small-event-border {
+            width: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .calendar {
+        width: 100%;
+        margin: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        position: relative;
+        left: 0px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .calendar {
+        margin-bottom: 20px;
+        padding: 40px;
+    }
+    .event-search-tools {
+        display: block;
+        margin-bottom: 30px !important;
+    }
+
+    .small-event-container {
+        max-height: 100%;
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .selected-date {
+        @include font-size(22);
+    }
+    .archive-events {
+        .filters-container {
+            h2 {
+                @include font-size(24);
+            }
+        }
+    }
+    #prev-month,
+    #next-month {
+        width: 40px;
+        height: 40px;
+        img {
+            width: 14px;
+        }
+    }
+    .event-search-tools {
+        margin-bottom: 30px !important;
+    }
+    .calendar {
+        padding: 20px;
+    }
+}
+@media only screen and (max-width: 440px) {
+    .calendar-dates {
+        background-color: $white;
+        border-right: 1px #e1e1e1 solid;
+        border-left: 1px #e1e1e1 solid;
+    }
+}
+@media only screen and (max-width: 400px) {
+    #curMonth {
+        margin-left: -32.5px;
+    }
+    .archive-events {
+        .filters-container {
+            h2 {
+                padding: 0 22.5px;
+            }
+        }
+    }
+
+    .calendar {
+        padding: 0px;
+    }
+    .day {
+        padding-top: 10px;
+        padding-bottom: 30px;
+    }
+
+    .calendar-header {
+        padding-top: 30px;
+        margin-bottom: 40px;
+    }
+
+    #daily-events {
+        padding-bottom: 30px;
+    }
+    .calendar-container {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: $greybackground;
+            z-index: -2;
+        }
+    }
+    #search-form {
+        .event-name {
+            width: 100%;
+        }
+    }
+    #form-event {
+        .select-container {
+            flex-direction: column;
+            label {
+                font-weight: 400;
+            }
+            select {
+                margin-top: 10px;
+                width: 100%;
+            }
+        }
+    }
+    .small-event-border {
+        .event-illustration small {
+            padding-bottom: 33%;
+            margin-bottom: 30px;
+        }
+        .selected-date {
+            width: 100%;
+        }
+        .small-card-container {
+            padding-right: 0px;
+        }
+
+        &::before {
+            width: 100%;
+        }
+    }
+}

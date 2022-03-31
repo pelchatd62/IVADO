@@ -1,0 +1,41 @@
+{
+    "key": "group_5f3bde72c183a",
+    "title": "[Actualités]",
+    "fields": [
+        {
+            "key": "field_5f3bde72c18b8",
+            "label": "Message",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Tout les informations doivent être entrés dans la page option sous l'onglet archive blog. Cette page doit être gardé à fin de référencement naturel",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "posts_page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1616687639
+}

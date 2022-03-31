@@ -1,0 +1,361 @@
+#forms-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 calc(100% / 6);
+    overflow: hidden;
+    background-color: $white;
+    height: 100vh;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    padding-top: 150px;
+    a{
+
+    }
+    .wisi {
+        li {
+            font-size: 18px;
+        }
+    }
+    .condition {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        p {
+            margin-bottom: 0;
+        }
+        input {
+            margin-left: 8px;
+            cursor: pointer;
+        }
+        label {
+            cursor: pointer;
+        }
+    }
+    h3 {
+        text-align: left;
+        color: $mainblue;
+    }
+    .x-button {
+        position: absolute;
+        color: $charcoal;
+        top: 67px;
+        right: 67px;
+        @include font-size(24);
+        content: "x";
+        height: 48px;
+        width: 48px;
+        text-align: center;
+        z-index: 1;
+        &:hover {
+            cursor: pointer;
+            color: $grey;
+        }
+    }
+    .form-description {
+        margin-bottom: 30px;
+        p {
+            @include font-size(18);
+            line-height: 1.8;
+        }
+    }
+    .closing-area {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+body.page-template-tpl-contact{
+    .form-wrapper{
+        a{
+            color: $mainblue;
+        }
+    }
+}
+// .form-wrapper.hide{
+//     display: block !important;
+// }
+.gform_button {
+    outline: none;
+}
+
+.ivado-form {
+    display: none;
+    height: calc(100vh - 300px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 9.7vw;
+    position: relative;
+    z-index: 1;
+    &::-webkit-scrollbar {
+        width: 5px;
+        background: #f7f7f7;
+    }
+
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(#f7f7f7, 0.35);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $mainblue;
+        outline: 1px solid $mainblue;
+    }
+}
+#contact-page-full {
+    display: flex;
+    // height: 100vh;
+    position: absolute;
+    padding-top: 300px;
+    min-height: 100vh;
+    .contact-section {
+        // align-self: center;
+        width: 50%;
+        .contact-title {
+            text-align: left;
+            max-width: 500px;
+            color: $mainblue;
+            font-size: 48px;
+            font-weight: 600;
+        }
+        .contact-subtitle {
+            @include font-size(30);
+            color: $charcoal;
+            margin-bottom: 30px;
+        }
+        .contact-address {
+            color: $grey;
+            @include font-size(20);
+            margin-bottom: 60px;
+            max-width: 320px;
+            @include transition(0.3s ease-in-out);
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+        .networks {
+            @include font-size(25);
+            color: $grey;
+
+            i {
+                margin-right: 40px;
+                @include transition(0.3s ease-in-out);
+                &:hover {
+                    color: $mainblue;
+                }
+            }
+        }
+    }
+    .contact-forms-section {
+        // align-self: center;
+        width: 50%;
+
+        .form-button {
+            display: flex;
+            width: 80%;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            @include transition(0.3s ease-in-out);
+            img {
+                @include transition(0.2s ease-in-out);
+                max-height: 21px;
+            }
+            p {
+                @include font-size(24);
+                margin: auto 0;
+                color: $charcoal;
+                margin-right: 15px;
+                line-height: 1.2;
+            }
+
+            &:hover {
+                cursor: pointer;
+                img {
+                    transform: translateX(10px);
+                }
+            }
+        }
+    }
+}
+.gform_wrapper {
+    display: block !important;
+}
+.form-wrapper.hide {
+    display: none;
+}
+#ui-datepicker-div {
+    padding: 12px;
+}
+.ui-datepicker-calendar {
+    thead th {
+        color: $mainblue;
+    }
+}
+.ui-datepicker-prev {
+    margin-right: 10px;
+}
+@media screen and (max-width: 1440px) {
+    #contact-page-full {
+        padding-top: 200px;
+        padding-bottom: 200px;
+        .contact-section {
+            .contact-title {
+                font-size: 45px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1250px) {
+    .ivado-form {
+        height: calc(100vh - 200px);
+        padding-right: 50px;
+    }
+    #forms-container {
+        position: fixed;
+        top: 0;
+        padding: 0 100px;
+        padding-top: 100px;
+        .x-button {
+            top: 30px;
+            right: 78.7px;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #forms-container {
+        position: fixed;
+        top: 0;
+        padding: 0 32px;
+        padding-top: 60px;
+        .x-button {
+            top: 18px;
+            right: 11px;
+        }
+    }
+    .ivado-form {
+        height: calc(100vh - 120px);
+        padding-right: 32px;
+    }
+    #contact-page-full {
+        position: relative;
+        height: initial;
+        flex-wrap: wrap;
+        .contact-section {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            .contact-title {
+                max-width: 100%;
+                width: 100%;
+            }
+            .sub-container {
+                width: 50%;
+            }
+        }
+        .contact-forms-section {
+            width: 100%;
+            > div {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .form-button {
+                width: 50%;
+                padding-right: 40px;
+            }
+        }
+    }
+    body.page-template-tpl-form-confirmation {
+        #contact-page-full {
+            min-height: initial;
+            .contact-section .contact-title {
+                margin-bottom: 60px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 800px) {
+    #contact-page-full {
+        .contact-section {
+            .contact-title {
+                font-size: 42px;
+            }
+            .contact-subtitle {
+                line-height: 1.2;
+                margin-bottom: 20px;
+            }
+            .networks {
+                margin-bottom: 60px;
+            }
+            .contact-address {
+                max-width: 100%;
+                margin-bottom: 40px;
+            }
+            .sub-container {
+                width: 100%;
+            }
+        }
+        .contact-forms-section {
+            .form-button {
+                width: calc(100% * 2 / 3 + 52px);
+                max-width: 600px;
+                padding-right: 0;
+            }
+        }
+    }
+}
+@media screen and (max-width: 800px) {
+    #contact-page-full {
+        .contact-forms-section {
+            .form-button {
+                width: 100%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 640px) {
+    #contact-page-full {
+        padding-top: 150px;
+        padding-bottom: 150px;
+        .contact-forms-section .form-button p {
+            font-size: 20px;
+        }
+        .contact-forms-section .form-button img {
+            width: 42px;
+        }
+        .contact-section {
+            .contact-title {
+                font-size: 36px;
+            }
+            .contact-subtitle {
+                font-size: 26px;
+            }
+            .networks {
+                font-size: 22px;
+            }
+        }
+    }
+    #forms-container {
+        padding: 0 16px;
+        padding-top: 40px;
+        .x-button {
+            top: 3px;
+            right: -6px;
+        }
+    }
+    .ivado-form {
+        padding-right: 16px;
+        height: calc(100vh - 80px);
+    }
+    body.page-template-tpl-form-confirmation {
+        #contact-page-full {
+            .contact-section .contact-title {
+                margin-bottom: 40px;
+            }
+        }
+    }
+}

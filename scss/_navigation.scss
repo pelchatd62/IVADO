@@ -1,0 +1,324 @@
+#masthead {
+    position: absolute;
+    top: 0;
+    z-index: 99999;
+    width: 100%;
+    &.reverse {
+        .header-logo {
+            filter: brightness(0) invert(1);
+        }
+    }
+}
+.hideSiteContent {
+    display: none;
+}
+.header-logo {
+    width: 12.5vw;
+    vertical-align: top;
+}
+.nav-header {
+    height: calc(100vw / 12);
+    display: flex;
+    align-items: center;
+}
+.burger-container {
+    background-color: transparent;
+    width: calc(100% / 12);
+    height: calc(100vw / 12);
+    position: fixed;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 99999;
+    @include transition(0.2s ease-in-out);
+    &.white {
+        background-color: transparent;
+        .burger {
+            .bar {
+                background-color: $white;
+            }
+        }
+    }
+    &.transition {
+        .burger {
+            .bar {
+                @include transition(0s ease-in-out);
+            }
+        }
+    }
+}
+.burger {
+    width: 35%;
+    height: 25%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &.active {
+        .bar {
+            position: absolute;
+            top: 50%;
+
+            &:first-child {
+                transform: translateY(-50%) rotate(45deg);
+            }
+            &:nth-child(2) {
+                display: none;
+            }
+            &:last-child {
+                transform: translateY(-50%) rotate(-45deg);
+            }
+        }
+    }
+    .bar {
+        width: 100%;
+        height: 3px;
+        background-color: $mainblue;
+        // @include transition(0.2s ease-in-out);
+        // position: absolute;
+        &:first-child {
+            // top:0;
+        }
+        &:nth-child(2) {
+            // top:50%;
+            // transform: translateY(-50%);
+        }
+        &:last-child {
+            // bottom:0;
+        }
+    }
+}
+.responsive-nav {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background-color: white;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    @include transition(0.3s ease-in-out);
+    padding-bottom: 60px;
+    overflow-x: hidden;
+    &.active {
+        overflow-y: auto;
+        opacity: 1;
+        pointer-events: initial;
+    }
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: -40px;
+        padding-right: 25%;
+    }
+    li {
+        width: 33.33333333333333333333333333%;
+        @include font-size(30);
+        color: $mainblue;
+        font-weight: 600;
+        margin-bottom: 40px;
+        line-height: 1.1;
+        a {
+            @include transition(0.3s ease-in-out);
+            &:hover {
+                opacity: 0.7;
+            }
+            &[aria-current="page"] {
+                position: relative;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 2px;
+                    background-color: $mainblue;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+    .head-newsletter {
+        color: $mainblue;
+        font-size: 16px;
+        @include transition(0.3s ease-in-out);
+        font-family: $roboto, "monospace";
+        margin-top: 25px;
+        display: inline-block;
+        font-weight: 700;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    .networks {
+        margin-left: -20px;
+        margin-right: -20px;
+        a {
+            @include font-size(22);
+            color: $mainblue;
+            padding: 0 20px;
+            @include transition(0.3s ease-in-out);
+            opacity: 1;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+        margin-top: 80px;
+    }
+    .language-switcher{
+        ul{
+            padding: 0;
+            margin:0;
+            li{
+                margin: 0;
+                padding: 0;
+                @include font-size(18);
+                font-weight: 900;
+            }
+        }
+    }
+}
+.logo-wrapper {
+    height: calc(100vw / 12);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@media screen and (max-width: 1250px) {
+    .burger{
+        &.active{
+            margin-bottom: 7px;
+        }
+    }
+    .responsive-nav{
+        .language-switcher{
+            margin-right: 70px;
+        }
+    }
+    .burger-container {
+        width: 100px;
+        height: 100px;
+        @include transition(0.3s ease-in-out);
+        &.hidden {
+            top: -103px;
+        }
+    }
+    .burger {
+        width: 40px;
+        height: 29px;
+    }
+    .logo-wrapper {
+        height: 90px;
+    }
+    .header-logo {
+        width: 156px;
+    }
+    .responsive-nav {
+        li {
+            @include font-size(25);
+        }
+    }
+    .nav-header {
+        height: 100px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .responsive-nav {
+        ul {
+            padding-right: 0;
+        }
+        li {
+            width: 33.3333333%;
+        }
+    }
+}
+@media screen and (min-width: 640px) {
+    .responsive-content-wrapper{
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+        width:100%;
+    }
+}
+@media screen and (max-width: 640px) {
+    .burger{
+        &.active{
+            margin-bottom: 0;
+            margin-top: 13px;
+        }
+    }
+    .burger-container {
+        width: 80px;
+        height: 80px;
+    }
+    .nav-header {
+        height: 80px;
+    }
+    
+    .responsive-nav {
+        .language-switcher{
+            margin-right: 60px;
+        }
+        ul {
+            margin-top: 60px;
+            margin-bottom: -25px;
+        }
+        li {
+            @include font-size(22);
+            width: 100%;
+            margin-bottom: 25px;
+        }
+        .networks {
+            margin-top: 60px;
+        }
+    }
+}
+// @media screen and (max-height: 700px) {
+//     .responsive-nav ul {
+//         margin-top: 60px;
+//     }
+// }
+
+/*# sourceMappingURL=main-style.css.map */
+
+/********************************************************************
+*
+*                     Modifications Daniel
+*
+********************************************************************/
+
+/*********************************************************
+* 
+*        Menu comme https://www.turing.ac.uk/
+*
+*********************************************************/
+.responsive-nav .menu-item ul.sub-menu {
+    max-height: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out,max-height 1s ease-in-out,visibility 0s linear;
+    overflow: hidden;
+    margin-top: 15px;
+    opacity: 0;
+    margin-left: 0;
+    padding-bottom: 20px;
+    padding-left: 5px;
+    transition: opacity 1s ease-in-out,max-height 1s ease-in-out,visibility 0s linear;
+}
+.responsive-nav .menu-item:hover ul.sub-menu, .responsive-nav .menu-item.hover ul.sub-menu {
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible;
+}
+.responsive-nav ul.sub-menu li {
+    width: 100%;
+    margin-bottom: 0;
+}
+.responsive-nav ul.sub-menu a {
+    font-size: 16px;
+    display: block;
+	font-weight: 500;
+    line-height: 1.5;
+    padding-left: 15px;
+    text-indent: -15px;
+}

@@ -1,0 +1,263 @@
+.btn {
+    &.play {
+        width: 74px;
+        height: 74px;
+        // background-color: $white;
+        @include pale-blue-gradient;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: rotate(45deg) translate(-61%, 0%);
+        z-index: 1;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90px;
+            height: 90px;
+            border: 1px solid $white;
+            transition: 0.3s cubic-bezier(0.44, 0.15, 0.19, 0.99);
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 74px;
+            height: 74px;
+            opacity: 0;
+            border: 1px solid $white;
+            transition: 0.3s cubic-bezier(0.44, 0.15, 0.19, 0.99);
+        }
+        img {
+            position: absolute;
+            top: 50%;
+            left: 52%;
+            transform: rotate(-45deg) translate(26%, -70%);
+            filter: brightness(0) invert(1);
+        }
+        &:hover {
+            &::before {
+                width: 108px;
+                height: 108px;
+                opacity: 0;
+            }
+            &::after {
+                width: 90px;
+                height: 90px;
+                opacity: 1;
+            }
+        }
+    }
+    &.cta-back {
+        height: 52px;
+        width: 52px;
+        position: relative;
+        margin-right: 20px;
+        @include transition(0.3s ease-in-out);
+        img {
+            @include transition(0.3s ease-in-out);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-height: 21px;
+        }
+    }
+    &.ivado {
+        position: relative;
+        display: inline-block;
+        padding: 29px 0px;
+        z-index: 1;
+        line-height: 1;
+        color: $charcoal;
+        max-width: 100%;
+        cursor: pointer;
+        .label {
+            // @include transition(0.3s ease-in-out);
+            transition: transform 0.25s cubic-bezier(0.44, 0.15, 0.19, 0.99) 0s,
+                color 0.25s cubic-bezier(0.44, 0.15, 0.19, 0.99) 0.25s;
+            padding: 0px 45px;
+            font-family: $roboto;
+            @include font-size(16);
+            text-align: center;
+            font-weight: bold;
+            display: inline-block;
+            line-height: 1.2;
+        }
+
+        &::after {
+            @include transition(0.25s cubic-bezier(0.44, 0.15, 0.19, 0.99));
+            transition-delay: 0.25s;
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 2px;
+            background-color: $mainblue;
+            bottom: -2px;
+            left: 0px;
+            z-index: -1;
+        }
+
+        &::before {
+            @include transition(0.25s cubic-bezier(0.44, 0.15, 0.19, 0.99));
+
+            content: "";
+            position: absolute;
+            opacity: 0;
+            height: 2px;
+            width: 0px;
+            background-color: white;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 30px;
+        }
+
+        &:hover {
+            &::after {
+                transition-delay: 0s;
+                height: 100%;
+            }
+            .label {
+                // transition-delay: .3s;
+                transition: transform 0.25s cubic-bezier(0.44, 0.15, 0.19, 0.99) 0.25s,
+                    color 0.25s cubic-bezier(0.44, 0.15, 0.19, 0.99) 0s;
+                color: $white;
+                transform: translateX(20px);
+                // margin-left:20px;
+                // margin-right:-20px;
+            }
+            &::before {
+                transition-delay: 0.25s;
+                opacity: 1;
+                width: 20px;
+            }
+        }
+    }
+}
+.wisi-standard-btn{
+    font-family: $roboto;
+    font-size: 16px;
+    font-weight: 700;
+    color: $mainblue;
+    @include transition(0.3s ease-in-out);
+    &:visited{
+        color: $mainblue;
+    }
+    &:hover{
+        opacity: 0.7;
+    }
+}
+.wisi.white{
+    .wisi-standard-btn{
+        color: $white;
+        &:visited{
+            color: $white;
+        }
+    }
+}
+section[data-layout="blue_text_photo"],
+section.information-single-event .container .reserve,
+.wisi.white {
+    .btn.ivado {
+        &::before {
+            background-color: $mainblue;
+        }
+        .label {
+            display: inline-block;
+            color: $white;
+            &::after {
+                background-color: $mainblue;
+            }
+        }
+        &::after {
+            background-color: $white;
+        }
+        &:hover {
+            .label {
+                color: $mainblue;
+            }
+        }
+    }
+}
+
+section.information-single-event .container .grey-reserve {
+    .btn.ivado {
+        .label {
+            display: inline-block;
+            color: $charcoal;
+            &::after {
+                background-color: $white;
+            }
+        }
+        &::after {
+            background-color: $mainblue;
+        }
+        &:hover {
+            .label {
+                color: $white;
+            }
+        }
+    }
+}
+
+.back-social_media {
+    .link {
+        font-family: "Roboto Mono", "mono";
+        color: $mainblue;
+        @include font-size(18);
+        display: flex;
+        align-items: center;
+        padding-right: 15px;
+        &:hover {
+            img {
+                transform: translate(calc(-50% - 4px), -50%);
+            }
+        }
+    }
+}
+@media screen and (max-width: 640px) {
+    .back-social_media {
+        .btn.cta-back {
+            height: 40px;
+            width: 40px;
+            min-width: 40px;
+            margin-right: 10px;
+            img {
+                width: 15px;
+            }
+        }
+    }
+    .btn {
+        &.play {
+            width: 49px;
+            height: 49px;
+            img {
+                width: 10px;
+            }
+            &::before {
+                width: 65px;
+                height: 65px;
+            }
+            &::after {
+                width: 49px;
+                height: 49px;
+            }
+            &:hover {
+                &::before {
+                    width: 83px;
+                    height: 70px;
+                    opacity: 0;
+                }
+                &::after {
+                    width: 65px;
+                    height: 65px;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

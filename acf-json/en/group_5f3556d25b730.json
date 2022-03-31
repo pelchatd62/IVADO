@@ -1,0 +1,49 @@
+{
+    "key": "group_5f3556d25b730",
+    "title": "Communauté",
+    "fields": [
+        {
+            "key": "field_5f3556d25b7a7",
+            "label": "{Texte+ Illustration}",
+            "name": "text_illustration",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_5e42fcb68f2b4",
+                "field_5e5d5d836af0b",
+                "field_5e42fcb68f2bb"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "archives\/tpl-archive-projects.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "",
+    "modified": 1616687640
+}

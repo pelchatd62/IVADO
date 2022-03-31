@@ -1,0 +1,32 @@
+/*
+Theme Name: TREIZE
+Theme URI: https://treize.pro/
+Author: TREIZE
+Author URI: https://treize.pro/
+Version: 13.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# General
+# Typography
+	## Titles
+	## Links
+# Header / Navigation
+# Content
+# Footer
+# 404
+# Buttons
+# Forms
+# Accessibility
+# Clearings
+# Media queries
+--------------------------------------------------------------*
+/u
+/* Reminder BEM */
+/*	.block 		*/
+/*	__element 	*/
+/*	--modifier 	*/
+
+@import 'css/main-style.css';

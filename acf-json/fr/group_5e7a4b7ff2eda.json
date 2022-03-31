@@ -1,0 +1,50 @@
+{
+    "key": "group_5e7a4b7ff2eda",
+    "title": "Titre pour barre de recherche membre industrielle",
+    "fields": [
+        {
+            "key": "field_5e7a4be6d62ae",
+            "label": "Titre",
+            "name": "title_search",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "partners"
+            },
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "members-type:membres-industriels"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "",
+    "modified": 1616687860
+}

@@ -1,0 +1,307 @@
+#person-info-box{
+    display: none;
+    z-index: 9999999;
+    position: fixed;
+    opacity: 0;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    background-color: white;
+    width: 100%;
+    padding: calc(100% / 12) calc(100% * 2 / 12);
+    background-color: rgba(white, 0.95);
+    .close-area{
+        position:absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+    }
+    p{
+        @include font-size(18);
+        line-height: 1.75;
+    }
+    h2{
+        @include font-size(30);
+        margin-bottom: 5px;
+        text-align: left;
+    }
+    .institute{
+        @include font-size(20);
+        font-weight: 700;
+        line-height: 1.21;
+        color:$charcoal;
+        &:not(.link){
+            margin-bottom: 12px;
+        }
+        i{
+            margin-left: 10px;
+            color: $mainblue;
+            @include transition(0.3s ease-in-out);
+        }
+        &.link{
+           display: block;
+           @include transition(0.3s ease-in-out);
+        &:hover{
+            opacity: 0.7;
+            i{
+                transform: translateY(-4px);
+            }
+        }
+       }
+    }
+    .croix{
+        position: absolute;
+        top:30px;
+        right:38px;
+        cursor: pointer;
+    }
+    .container{
+        height: 100%;
+        width: 100%;
+        border: 1px solid $mainblue;
+        padding: 100px 45px 60px 60px;
+        position: relative;
+        background-color: white;
+        z-index: 1;
+        .content{
+            height: 100%;
+            width: 100%;
+            overflow-y: scroll;
+            padding-right: 70px;
+            display: flex;
+            .image{
+                width: 100%;
+                position: relative;
+                padding-bottom:125% ;
+                overflow: hidden;
+                background: no-repeat center / cover;
+            }
+            > div{
+                &:first-child{
+                    min-width: 220px;
+                    width: 220px;
+                    margin-right: 100px;
+                }
+                &:last-child{
+                    // display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    width: 100%;
+                    p, h3, h2, h4{
+                        width: 100%;
+                    }
+                }
+            }
+            &::-webkit-scrollbar {
+                width: 5px;
+                background: $greybackground;
+            }
+            &::-webkit-scrollbar-thumb {
+              background-color: $mainblue;
+              outline: 1px solid $mainblue;
+            }
+        }
+        
+    }
+    .personal-info{
+        display: flex;
+        align-items: center;
+        margin: -10px;
+        span{
+            display: none;
+        }
+        i{
+            @include font-size (20);
+            padding: 10px;
+            
+        }
+        a{
+            @include transition(0.2s ease-in-out);
+            color: $mainblue;
+            &:hover{
+               opacity: 0.7;
+            }
+        }
+    }
+    .title{
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+    li{
+        @include font-size(16);
+    }
+    ul li::before {
+        margin-top: 15px;
+    }
+}
+body.single-persons{
+    #person-info-box{
+        position: relative;
+        z-index: initial;
+        top: initial;
+        left: initial;
+        right: initial;
+        bottom: initial;
+        padding-top: 0;
+        padding-bottom: 0;
+        .container{
+            padding: 0;
+            border: none;
+            .content{
+                overflow: visible;
+                padding-right: 0;
+                > div:first-child{
+                    min-width: 280px;
+                    width: 280px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1440px){
+    #person-info-box {
+        padding: calc(100% / 12) calc(100% * 1 / 12);
+    }
+}
+@media screen and (max-width:1250px){
+    #person-info-box {
+        .container{
+            .content{
+                > div{
+                    &:first-child{
+                        margin-right: 50px;
+                    }
+                }
+            }
+            
+        }
+    }
+    body.single-persons{
+        #person-info-box{
+            padding: 0 32px;
+            
+        }
+    }
+}
+@media screen and (min-width:1024px){
+    #person-info-box {
+        .personal-info{
+            flex-direction: column;
+            align-items: flex-start;
+            span{
+                display: inline-block;
+            }
+            a{
+                 white-space: nowrap;
+                 display: flex;
+                 align-items: center;
+            }
+        }
+    }
+}
+@media screen and (max-width:1024px){
+    #person-info-box {
+        padding: 32px;
+        .container{
+            padding: 100px 45px 60px 45px;
+            .content {
+                > div:first-child {
+                    margin-right: 25px;
+                }
+            }
+            
+        }
+    }
+}
+@media screen and (max-width:800px){
+    #person-info-box {
+        .croix{
+            right: 25px;
+        }
+        .container{
+            padding: 70px 32px 60px 32px;
+            .content {
+                padding-right: 32px;
+                > div:first-child {
+                    min-width: 180px;
+                    width: 180px;
+                }
+            }
+        }
+        ul li::before {
+            margin-top: 14px;
+        }
+    }
+    body.single-persons{
+        #person-info-box{
+            .container{
+                .content {
+                    flex-wrap: wrap;
+                    > div:first-child {
+                        margin-right: 0;
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+
+        }
+    }
+}
+@media screen and (max-width:640px){
+    #person-info-box {
+        padding: 16px;
+        h2{
+            font-size: 28px;
+        }
+        p{
+            font-size: 16px;
+        }
+        .croix{
+            right: 9px;
+            top:12px;
+        }
+        .container{
+            padding: 40px 7px 40px 16px;
+            .content {
+               flex-wrap: wrap;
+               padding-right: 16px;
+               .image{
+                   margin-bottom: 0px;
+               }
+                > div:first-child {
+                    width: 300px;
+                    margin-right: 0;
+                    margin-bottom: 30px; 
+                }
+            }
+        }
+        .personal-info{
+            margin-top: 0px;
+        }
+        ul li::before {
+            margin-top: 12px;
+        }
+    }
+    body.single-persons{
+        #person-info-box{
+            padding: 0 16px;
+            .container{
+                .content{
+                    > div:first-child{
+                        min-width: 220px;
+                        width: 220px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width:640px){
+    #person-info-box{
+        .personal-info{
+            margin-top: 5px;
+        }
+    }
+}

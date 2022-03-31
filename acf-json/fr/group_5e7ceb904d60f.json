@@ -1,0 +1,43 @@
+{
+    "key": "group_5e7ceb904d60f",
+    "title": "{Person}",
+    "fields": [
+        {
+            "key": "field_5e7ceba35c112",
+            "label": "Taille image",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "!IMPORTANT: Pour les chercheurs, ajouter l'image de bon format au champs  Grand image\r\nimage thumbnail -> format de la petite image (Équipe)(Conférencier)(Prof) : 285px \/ 362px\r\nformat de la grande image (Chercheurs): 728px \/ 451px",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "persons"
+            }
+        ]
+    ],
+    "menu_order": -2,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "",
+    "modified": 1616687857
+}

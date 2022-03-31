@@ -1,0 +1,26 @@
+section[data-layout="title_description"]{
+    .title-description-container{
+        display:flex;
+        width:100%;
+    }
+    
+    .title-left-text{
+        width: 50%;
+        text-align: left;
+        padding-right: 80px;
+    }
+}
+
+@media screen and (max-width:1024px){
+    section[data-layout="title_description"]{
+        .title-left-text{
+            width: 100%;
+            padding-right: 0;
+        }
+        .title-description-container{
+            flex-wrap: wrap;
+        }
+    } 
+}
+
+

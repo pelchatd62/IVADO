@@ -1,0 +1,53 @@
+section[data-layout="conferencier"]{
+    .container{
+        width: calc(100% + 100px);
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -45px;
+        margin-bottom: -60px;
+    }
+    .solo-conferencier{
+        width: 20%;
+        padding: 0 55px;
+        margin-bottom: 60px;
+    }
+}
+@media screen and (max-width: 1440px){
+    section[data-layout="conferencier"]{
+        .container{
+            width: calc(100% + 50px);
+            margin-left: -20px;
+        }
+        .solo-conferencier{
+            padding: 0 30px;
+        }
+    }
+}
+@media screen and (max-width: 1024px){
+    section[data-layout="conferencier"]{
+        .solo-conferencier{
+            width: 25%;
+        }
+    }
+}
+@media screen and (max-width: 800px){
+    section[data-layout="conferencier"]{
+        .solo-conferencier{
+            width: 33.33333333%;
+        }
+    }
+}
+@media screen and (max-width: 640px){
+    section[data-layout="conferencier"]{
+        .container{
+            width: calc(100% + 20px);
+            margin-left: -5px;
+            margin-bottom: -40px;
+        }
+        .solo-conferencier{
+            width: 50%;
+            padding: 0 15px;
+            margin-bottom: 40px;
+        }
+    }
+}

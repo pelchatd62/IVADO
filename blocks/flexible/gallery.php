@@ -1,0 +1,1 @@
+<?php include( locate_template( 'blocks/article-flexible/gallery.php', false, false ) ); ?>

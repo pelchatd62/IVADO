@@ -1,0 +1,96 @@
+.solo-conferencier{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .poste{
+        @include font-size(16);
+        line-height: 1.18;
+        font-weight: 400;
+        color: $charcoal;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    .institute{
+        @include font-size(14);
+        font-weight: 700;
+        line-height: 1.21;
+        margin-bottom: 0;
+        color: $charcoal;
+        width:100%;
+        i{
+            margin-left: 7px;
+            color: $mainblue;
+            @include transition(0.3s ease-in-out);
+        }
+       
+    }
+    a{
+        @include transition(0.3s ease-in-out);
+        &:hover{
+            opacity: 0.7;
+        }
+    }
+    h3{
+        @include font-size(22);
+        color: $mainblue;
+        margin-bottom: 5px;
+        line-height: 1.18;
+        font-weight: 400;
+        width: 100%;
+    }
+    p, h3{
+        text-align: center;
+    }
+    .white-background{
+        background-color: #dbd9d9;
+    }
+    .image{
+        width: 100%;
+        position: relative;
+        padding-bottom: 127%;
+        margin-bottom: 10px;
+        background: no-repeat center / cover;
+        &::before{
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: $mainblue;
+            transform: translate(-10px, -10px);
+            z-index: -1;
+        }
+    }
+    .know-more{
+        font-family: $roboto,'monospace';
+        font-weight: 700;
+        color: $mainblue;
+        @include font-size(14);
+        cursor: pointer;
+        line-height: 1;
+        margin-top: -5px;
+        @include transition (0.3s ease-in-out);
+        &:hover{
+            opacity: 0.7;
+        }
+    }
+    &.prof{
+        .know-more{
+            margin-top: 10px;
+        }
+    }
+}
+section.team{
+    .solo-conferencier .institute {
+        display: none;
+    }
+}
+@media screen and (max-width:640px){
+    .solo-conferencier{
+        h3{
+            @include font-size(20);
+        }
+        .poste{
+            @include font-size(15);
+        }
+    }
+}

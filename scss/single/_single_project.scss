@@ -1,0 +1,58 @@
+.single-project-partner{
+    .container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: -30px;
+        .image{
+            width: 25%;
+            display: flex;
+            justify-content: center;
+            padding: 0 20px;
+            margin-bottom: 30px;
+            img{
+                max-height: 95px;
+            }
+        }
+    }
+}
+body.single-projects{
+    section[data-layout="chercheur"]{
+        padding-bottom:100px;
+        &:last-child{
+            padding-bottom: 125px;
+        }
+    }
+    .content__section.grey.single-project-partner{
+        padding-top: 0;
+    }
+}
+@media screen and (max-width: 1250px){
+    .single-project-partner{
+        .container{
+            .image{
+                width: 25%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 800px){
+    .single-project-partner{
+        .container{
+            .image{
+                width: 33.333333333%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 500px){
+    .single-project-partner{
+        .container{
+            .image{
+                width: 50%;
+            }
+        }
+    }
+}

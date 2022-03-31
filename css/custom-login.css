@@ -1,0 +1,6 @@
+.login h1 a {
+	background-image: url('../images/rodeofx_logo_black.png');
+	width: 200px;
+	height: 37px;
+	background-size: contain;
+}

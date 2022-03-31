@@ -1,0 +1,121 @@
+section[data-layout="a_propos"]{
+    h2{
+        text-align: left;
+    }
+    .container{
+        padding: 0 calc(100% * 1 / 10);
+        padding-top: 200px;
+        position: relative;
+        z-index: 1;
+    }
+    .image{
+        position: absolute;
+        width: calc(100% * 10 / 8);
+        bottom: 50%;
+        top: -200px;
+        left: calc(-100% * 1 / 8);
+        z-index: -1;
+        background:  $mainblue no-repeat center/cover;
+    }
+    .image-blue{
+        position: absolute;
+        width: calc(100% * 10 / 8);
+        bottom: 50%;
+        top: -200px;
+        left: calc(-100% * 1 / 8);
+        max-height: 650px;
+        z-index: -1;
+        background: no-repeat center/cover;
+        background-color: $mainblue;
+    }
+    .content{
+        position: relative;
+        background-color: white;
+        padding: 80px;
+    }
+}
+@media screen and (max-width: 1450px){
+    section[data-layout="a_propos"]{
+        .container{
+            padding-top: 125px;
+        }
+        .image{
+            top: -125px;
+        }
+    }
+}
+@media screen and (max-width: 1250px){
+    section[data-layout="a_propos"]{
+        .container{
+            padding: 0 100px;
+            padding-top: 100px;
+        }
+        .image{
+            top: -100px;
+            width: calc(100% + 200px);
+            left: -100px;
+        }
+        .content{
+            padding: 60px;
+        }
+    }
+}
+@media screen and (max-width: 1024px){
+    section[data-layout="a_propos"]{
+        .container{
+            padding: 0 50px;
+            padding-top: 75px;
+        }
+        .image{
+            top: -75px;
+            width: calc(100% + 100px);
+            left: -50px;
+            bottom: initial;
+            padding-bottom: 56%;
+        }
+        .content{
+            padding: 50px;
+        }
+    }
+}
+@media screen and (max-width: 800px){
+    section[data-layout="a_propos"]{
+        .container{
+            padding: 0 32px;
+            padding-top: 75px;
+        }
+        .image{
+            top: -75px;
+            width: calc(100% + 64px);
+            left: -32px;
+            bottom: initial;
+            padding-bottom: 56%;
+        }
+        .content{
+            padding: 32px;
+        }
+    }
+}
+@media screen and (max-width: 640px){
+    section[data-layout="a_propos"]{
+        .content{
+            padding: 16px;
+        }
+        .container{
+            padding: 0 20px;
+            padding-top: 75px;
+
+        }
+        .image{
+            width: calc(100% + 40px);
+            left: -20px;
+        }
+    }
+}
+@media screen and (max-width: 400px){
+    section[data-layout="a_propos"]{
+        .image{
+            padding-bottom: 73%;
+        }
+    }
+}

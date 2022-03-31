@@ -1,0 +1,125 @@
+.solo-researcher{
+    .content{
+        background-color: white;
+        padding: 60px;
+        margin-top: -80px ;
+        margin-right: 60px;
+        position: relative;
+        @include transition (0.3s ease-in-out);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .image{
+        width:100%;
+        position: relative;
+        padding-bottom: 62%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+    h3{
+        @include font-size(30);
+        color: $mainblue;
+        margin-bottom: 10px;
+        line-height: 1.18;
+        font-weight: 400;
+    }
+    .institute{
+        @include font-size(20);
+        font-weight: 700;
+        line-height: 1.21;
+        color:$charcoal;
+        margin: 0;
+        i{
+            margin-left: 10px;
+            color: $mainblue;
+            @include transition(0.3s ease-in-out);
+        }
+       
+    }
+    .know-more{
+        margin-top:40px;
+        font-family: $roboto,'monospace';
+        @include font-size(16);
+        color:$mainblue;
+        cursor: pointer;
+        font-weight: 700;
+        @include transition (0.3s ease-in-out);
+        &:hover{
+            opacity: 0.7;
+        }
+    }
+    a{
+        @include transition(0.3s ease-in-out);
+        &:hover{
+            opacity: 0.7;
+        }
+    }
+}
+@media screen and (min-width: 640px){
+    section:not(.grey){
+        .solo-researcher:nth-child(odd){
+            .content{
+                margin-left: 1px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1440px){
+    .solo-researcher {
+        .content {
+            padding: 40px;
+            margin-top: -40px;
+        }
+    }
+}
+@media screen and (max-width: 1024px){
+    .solo-researcher {
+        .content {
+            margin-right: 30px;
+        }
+        .know-more {
+            margin-top: 20px;
+        }
+        h3{
+            @include font-size(25);
+        }
+        .institute {
+            @include font-size(18);
+        }
+    }
+}
+@media screen and (max-width: 800px){
+    .solo-researcher {
+        .content {
+            // margin-right: 20px;
+        }
+    }
+}
+@media screen and (max-width: 640px){
+    .solo-researcher{
+        .institute {
+            @include font-size(16);
+        }
+        .know-more{
+            @include font-size(14);
+        }
+    }
+    section:not(.grey){
+        .solo-researcher{
+            .content{
+                margin-left: 1px;
+                
+            }
+        }
+    }
+}
+@media screen and (max-width: 400px){
+    .solo-researcher {
+        .content {
+            margin-top:-20px;
+        }
+    }
+}

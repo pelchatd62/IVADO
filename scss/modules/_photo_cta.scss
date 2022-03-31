@@ -1,0 +1,39 @@
+.photo_cta-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .container-image{
+        position: relative;
+        height: 80vh;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 60px;
+    }
+    .image{
+        margin-bottom: 60px;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .photo_cta-container{
+        .container-image{
+            height: auto;
+            padding-bottom: 60%;
+        }
+    }
+}
+@media screen and (max-width: 800px){
+    .photo_cta-container{
+        .container-image{
+            margin-bottom: 40px;
+        }
+    }
+}
+@media screen and (max-width: 640px){
+    .photo_cta-container{
+        .container-image{
+            margin-bottom: 30px;
+        }
+    }
+}

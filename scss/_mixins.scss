@@ -1,0 +1,112 @@
+@mixin dark-blue-gradient() {
+    background: rgb(0, 81, 146);
+    background: linear-gradient(143deg, rgba(0, 128, 199, 1) 0%, rgba(0, 81, 146, 1) 100%);
+}
+@mixin pale-blue-gradient() {
+    background: rgb(28, 167, 227);
+    background: linear-gradient(143deg, rgba(28, 167, 227, 1) 0%, rgba(0, 96, 173, 1) 100%);
+}
+@mixin pale-green-gradient() {
+    background: rgb(67, 175, 128);
+    background: linear-gradient(143deg, rgba(67, 175, 128, 1) 0%, rgba(58, 178, 157, 1) 100%);
+}
+@mixin dark-green-gradient() {
+    background: rgb(73, 173, 99);
+    background: linear-gradient(143deg, rgba(73, 173, 99, 1) 0%, rgba(67, 175, 128, 1) 100%);
+}
+
+@mixin gradient-tricolor() {
+    background: rgb(0, 114, 186);
+    background: linear-gradient(143deg, rgba(0, 114, 186, 1) 0%, rgba(60, 180, 231, 1) 50%, rgba(70, 185, 120, 1) 100%);
+}
+
+@mixin box-sizing($box-model) {
+    -webkit-box-sizing: $box-model; // Safari <= 5
+    -moz-box-sizing: $box-model; // Firefox <= 19
+    box-sizing: $box-model;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-top-radius($radius) {
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+@mixin border-right-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    background-clip: padding-box;
+}
+@mixin border-bottom-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    background-clip: padding-box;
+}
+@mixin border-left-radius($radius) {
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin font-size($sizeValue: 16) {
+    font-size: $sizeValue + px; //fallback for old browsers
+    font-size: ($sizeValue / 16) + rem;
+}
+
+@mixin transition($transition...) {
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+@mixin transition-property($property...) {
+    -moz-transition-property: $property;
+    -o-transition-property: $property;
+    -webkit-transition-property: $property;
+    transition-property: $property;
+}
+@mixin transition-duration($duration...) {
+    -moz-transition-property: $duration;
+    -o-transition-property: $duration;
+    -webkit-transition-property: $duration;
+    transition-property: $duration;
+}
+@mixin transition-timing-function($timing...) {
+    -moz-transition-timing-function: $timing;
+    -o-transition-timing-function: $timing;
+    -webkit-transition-timing-function: $timing;
+    transition-timing-function: $timing;
+}
+@mixin transition-delay($delay...) {
+    -moz-transition-delay: $delay;
+    -o-transition-delay: $delay;
+    -webkit-transition-delay: $delay;
+    transition-delay: $delay;
+}
+@mixin drop-shadow($x, $y, $blur, $color) {
+    -webkit-filter: drop-shadow($x $y $blur $color);
+    filter: drop-shadow($x $y $blur $color);
+}
+@mixin box-shadow($x, $y, $blur, $spread, $color) {
+    -webkit-box-shadow: $x $y $blur $spread $color;
+    -moz-box-shadow: $x $y $blur $spread $color;
+    box-shadow: $x $y $blur $spread $color;
+}
+@mixin box-shadow-inset($x, $y, $blur, $spread, $color) {
+    -webkit-box-shadow: inset $x $y $blur $spread $color;
+    -moz-box-shadow: inset $x $y $blur $spread $color;
+    box-shadow: inset $x $y $blur $spread $color;
+}

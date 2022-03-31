@@ -1,0 +1,95 @@
+section[data-layout="texte_diagonal"] {
+    .container {
+        width: 100%;
+    }
+    .image {
+        padding-bottom: 48%;
+        position: relative;
+        overflow: hidden;
+    }
+    .content,
+    .image-container-diag {
+        width: calc(100% - (100% / 12) - ((100% - 100% * 2 / 12)) / 4);
+    }
+    .image-container-diag {
+        margin-left: calc((100% / 12) + (100% * 10 / 12 / 4));
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $white;
+    }
+    h2 {
+        text-align: left;
+        margin-bottom: 30px;
+        font-weight: 600;
+    }
+    .content {
+        padding: calc(100vw / 12) calc(100% / 12);
+        position: relative;
+        z-index: 1;
+        color: $white;
+        margin-top: -13.4vw;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            @include pale-blue-gradient;
+        }
+    }
+}
+@media screen and (max-width: 1250px) {
+    section[data-layout="texte_diagonal"] {
+        .content,
+        .image-container-diag {
+            width: calc(100% - (32px) - ((100% - 64px)) / 4);
+        }
+        .image-container-diag {
+            margin-left: calc((32px) + ((100% - 64px) / 4));
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    section[data-layout="texte_diagonal"] {
+        .content {
+            // width: calc(100% - 32px);
+            width: calc((100% - 32px) - ((100% - 64px) / 8 * 1));
+            margin-top: -80px;
+        }
+        .image {
+            padding-bottom: 56%;
+        }
+    }
+}
+@media screen and (max-width: 800px) {
+    section[data-layout="texte_diagonal"] {
+        .image-container-diag {
+            width: calc(100% - 32px);
+            margin-left: 32px;
+        }
+        .content {
+            padding: 60px;
+            width: calc(100% - 32px);
+        }
+    }
+}
+@media screen and (max-width: 640px) {
+    section[data-layout="texte_diagonal"] {
+        .image-container-diag {
+            width: calc(100% - 16px);
+            margin-left: 16px;
+        }
+        .content {
+            width: calc(100% - 16px);
+            margin-top: -60px;
+            padding: 35px;
+        }
+    }
+}

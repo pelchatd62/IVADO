@@ -1,0 +1,95 @@
+{
+    "key": "group_5f3556e0ae0ae",
+    "title": "[Single Article]",
+    "fields": [
+        {
+            "key": "field_5f3556e0ae114",
+            "label": "Taille images",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Image thumbnail pour la page single: 1744px \/  570px",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5f3556e0ae17a",
+            "label": "Image complète",
+            "name": "image_complete",
+            "type": "true_false",
+            "instructions": "Cocher si on doit voir l'image au complet",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5f3556e0ae1e2",
+            "label": "Couleur fond",
+            "name": "couleur_fond",
+            "type": "radio",
+            "instructions": "Couleur du fond derrière l'image complète",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5f3556e0ae17a",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "vert": "Vert",
+                "bleu": "Bleu",
+                "blanc": "Blanc"
+            },
+            "allow_null": 1,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "",
+    "modified": 1616687647
+}

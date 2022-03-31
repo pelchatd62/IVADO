@@ -1,0 +1,42 @@
+section[data-layout="accordeon"]{
+    .result{
+        margin-bottom: 45px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        p{
+            line-height: 1.2;
+        }
+        .title{
+            @include font-size (26);
+            line-height: 1.2;
+            color: $charcoal;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+        .top-content{
+            p{
+                @include font-size (18);
+                font-weight: 700;
+                color: $charcoal;
+                margin-bottom: 5px;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .bottom-content{
+            margin-top: 30px;
+        }
+        .university{
+            font-weight: 400 !important;
+        }
+    }
+}
+.result-ajax-container{
+    margin-top: 100px; 
+    // margin-bottom: 200px; 
+    .content__section:first-child {
+        margin-top: 0; 
+    }
+}

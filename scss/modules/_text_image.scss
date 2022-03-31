@@ -1,0 +1,159 @@
+section[data-layout="text_image"] {
+    h2 {
+        text-align: left;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        &.right {
+            flex-direction: row-reverse;
+            .content {
+                padding-right: 0;
+                padding-left: calc(1 / 10 * 100%);
+            }
+            .container-image {
+                &:before {
+                    right: -40%;
+                    left: unset;
+                }
+            }
+        }
+        .content {
+            width: 50%;
+            padding-right: calc(1 / 10 * 100%);
+        }
+    }
+
+    .container-image {
+        position: relative;
+        width: 550px;
+        padding-bottom: 550px;
+        max-width: 50%;
+        overflow: hidden;
+        &:before {
+            content: "";
+            width: 301px;
+            height: 345px;
+            left: -40%;
+            top: -14%;
+            position: absolute;
+            background: url("../assets/svg/losanges.svg") top left / contain no-repeat;
+            z-index: -1;
+        }
+    }
+}
+@media screen and (max-width: 1500px) {
+    section[data-layout="text_image"] {
+        .container {
+            &.right{
+                .container-image{
+                    &::before{
+                        right: -128px;
+                        width: 220px;
+                        top:-32%;
+                    }
+                }
+            } 
+        }
+    }
+}
+@media screen and (max-width: 1440px) {
+    section[data-layout="text_image"] {
+        .container-image{
+            &::before{
+                width: 220px;
+                height: 345px;
+                left: -93px;
+                top: -20%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1344px) {
+        section[data-layout="text_image"] {
+        .container {
+            &.right{
+                .container-image{
+                    &::before{
+                        right: -98px;
+                        top: -24%;
+                    }
+                }
+            } 
+        }
+    }
+}
+@media screen and (max-width: 1250px) {
+    section[data-layout="text_image"] {
+        .container-image{
+            &::before{
+                left: -78px;
+            }
+        }
+        .container {
+            &.right {
+                .container-image{
+                    &::before{
+                        right: -72px;
+                    }
+                }
+                .content {
+                    padding-left: 70px;
+                }
+            }
+            .content {
+                padding-right: 70px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    section[data-layout="text_image"] {
+        .container {
+            &.right {
+                .container-image{
+                    &::before{
+                        right: -155px;
+                        top: -50px;
+                    }
+                }
+                .content {
+                    padding-left: 0;
+                }
+                justify-content: flex-end;
+            }
+            .content {
+                width: 100%;
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+            .container-image {
+                margin: 0 auto;
+                max-width: none;
+                &::before{
+                    left: -119px;
+                    top:-9%;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 640px) {
+    section[data-layout="text_image"] {
+        .container {
+            .content {
+                margin-bottom: 30px;
+            }
+            .container-image {
+                max-width: 100%;
+                padding-bottom: 100%;
+                &::before{
+                    display: none;
+                }
+            }
+        }
+    }
+}

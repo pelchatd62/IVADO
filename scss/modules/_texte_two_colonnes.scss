@@ -1,0 +1,27 @@
+section[data-layout="texte_two_colonnes"]{
+    h2{
+        text-align: left;
+    }
+    .container{
+        display: flex;
+        div{
+            padding-right: calc(100vw / 12 / 2);
+            width: 50%;
+        }
+    }
+}
+@media screen and (max-width: 1024px){
+    section[data-layout="texte_two_colonnes"]{
+        .container{
+            flex-wrap: wrap;
+            div{
+                padding-right: calc(100vw / 12 / 2);
+                width: 100%;
+                padding-right: 0;
+                &:first-child{
+                    margin-bottom: 60px;
+                }
+            }
+        }
+    }
+}

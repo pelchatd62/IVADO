@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="360" height="271" viewBox="0 0 360 271">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#0080c7"/>
+      <stop offset="1" stop-color="#0060ad"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_521" data-name="Rectangle 521" width="360" height="271" transform="translate(237 367)" fill="url(#linear-gradient)"/>
+    </clipPath>
+  </defs>
+  <g id="Groupe_de_masques_85" data-name="Groupe de masques 85" transform="translate(-237 -367)" clip-path="url(#clip-path)">
+    <g id="Groupe_774" data-name="Groupe 774" transform="translate(-99 -2478.91)">
+      <rect id="Rectangle_522" data-name="Rectangle 522" width="358.42" height="358.42" transform="translate(420 2978.352) rotate(-45)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.5" opacity="0"/>
+      <rect id="Rectangle_523" data-name="Rectangle 523" width="316.161" height="316.161" transform="translate(449.135 2979.098) rotate(-45)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.5" opacity="0.083"/>
+      <rect id="Rectangle_524" data-name="Rectangle 524" width="273.902" height="273.902" transform="translate(478.27 2979.845) rotate(-45)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.5" opacity="0.167"/>
+      <rect id="Rectangle_525" data-name="Rectangle 525" width="231.643" height="231.643" transform="translate(507.405 2980.591) rotate(-45)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.5" opacity="0.25"/>
+      <rect id="Rectangle_526" data-name="Rectangle 526" width="189.383" height="189.383" transform="translate(536.541 2981.338) rotate(-45)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.5" opacity="0.333"/>
+      <rect id="Rectangle_527" data-name="Rectangle 527" width="147.124" height="147.124" transform="translate(565.676 2982.085) rotate(-45)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.5" opacity="0.417"/>
+      <rect id="Rectangle_528" data-name="Rectangle 528" width="104.865" height="104.865" transform="translate(594.811 2982.831) rotate(-45)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.5" opacity="0.5"/>
+    </g>
+  </g>
+</svg>
